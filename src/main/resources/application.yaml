@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: literalura-challenge-java
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DATASOURCE_URL}
+    username: ${DATASOURCE_USER}
+    password: ${DATASOURCE_PASSWORD}
+  data:
+    jdbc:
+      dialect: postgresql
+  cache:
+    type: redis
