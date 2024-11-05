@@ -4,7 +4,7 @@ spring:
   cache:
     type: redis
     redis:
-      time-to-live: 5s
+      time-to-live: 1m
 gutendex:
   api:
     url: https://gutendex.com/books/
