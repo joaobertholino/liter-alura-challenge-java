@@ -15,8 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookController {
 	private final BookService bookService;
 
+	@GetMapping("all")
+	public ResponseEntity<Result> getAllBooks() {
+		return ResponseEntity.ok(this.bookService.getAllBooks());
+	}
+
 	@GetMapping("/get")
 	public ResponseEntity<Result> getBooks(@RequestParam String authorYearStart, @RequestParam String languages) {
-		return ResponseEntity.ok(this.bookService.getBook(authorYearStart, languages));
+		return ResponseEntity.ok(this.bookService.getBooks(authorYearStart, languages));
 	}
 }

@@ -1,17 +1,31 @@
 package dev.joaobertholino.literalurachallengejava.model;
 
-import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-public record Book(
-		Integer id,
-		String title,
-		List<String> subjects,
-		List<Person> authors,
-		List<Person> translators,
-		List<String> bookshelves,
-		List<String> languages,
-		Boolean copyright,
-		String media_type,
-		Integer download_count
-) {
+import java.io.Serial;
+import java.io.Serializable;
+import java.util.List;
+import java.util.Objects;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+public class Book implements Serializable {
+
+	@Serial
+	private static final long serialVersionUID = 1L;
+	private Integer id;
+	private String title;
+	private List<String> subjects;
+	private List<Person> authors;
+	private List<Person> translators;
+	private List<String> bookshelves;
+	private List<String> languages;
+	private Boolean copyright;
+	private String media_type;
+	private Integer download_count;
 }

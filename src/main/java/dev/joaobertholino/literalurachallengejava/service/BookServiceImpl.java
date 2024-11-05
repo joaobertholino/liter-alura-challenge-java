@@ -19,8 +19,13 @@ public class BookServiceImpl implements BookService {
 	private final RestTemplate restTemplate;
 
 	@Override
+	public Result getAllBooks() {
+		return this.restTemplate.getForObject(this.serviceUrl, Result.class);
+	}
+
+	@Override
 	@Cacheable(value = "get-book")
-	public Result getBook(String authorYearStart, String languages) {
+	public Result getBooks(String authorYearStart, String languages) {
 		MultiValueMap<String, String> valueMap = new LinkedMultiValueMap<>();
 		valueMap.add("author_year_start", authorYearStart);
 		valueMap.add("languages", languages);
