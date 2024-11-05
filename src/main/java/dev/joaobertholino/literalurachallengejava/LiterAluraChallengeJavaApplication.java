@@ -2,12 +2,14 @@ package dev.joaobertholino.literalurachallengejava;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication
-public class LiteraluraChallengeJavaApplication {
+@EnableCaching
+public class LiterAluraChallengeJavaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LiteraluraChallengeJavaApplication.class, args);
+		SpringApplication.run(LiterAluraChallengeJavaApplication.class, args);
 	}
 
 }

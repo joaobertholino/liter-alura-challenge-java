@@ -1,13 +1,10 @@
 spring:
   application:
     name: literalura-challenge-java
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: ${DATASOURCE_URL}
-    username: ${DATASOURCE_USER}
-    password: ${DATASOURCE_PASSWORD}
-  data:
-    jdbc:
-      dialect: postgresql
   cache:
     type: redis
+    redis:
+      time-to-live: 5s
+gutendex:
+  api:
+    url: https://gutendex.com/books/
