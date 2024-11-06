@@ -1,5 +1,29 @@
 services:
+  app:
+    container_name: liter-alura
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DATASOURCE_URL: jdbc:postgresql://postgres:5432/liter-alura-database
+      DATASOURCE_USERNAME: liter-alura
+      DATASOURCE_PASSWORD: 12345
+    ports:
+      - '8080:8080'
+    depends_on:
+      - postgres
+      - redis
+  postgres:
+    container_name: postgres-database
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: liter-alura-database
+      POSTGRES_USER: liter-alura
+      POSTGRES_PASSWORD: 12345
+    ports:
+      - '5432:5432'
   redis:
+    container_name: redis-database
     image: redis:latest
     ports:
       - '6379:6379'

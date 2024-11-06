@@ -5,6 +5,14 @@ spring:
     type: redis
     redis:
       time-to-live: 1m
+  data:
+    redis:
+      host: redis
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DATASOURCE_URL}
+    username: ${DATASOURCE_USERNAME}
+    password: ${DATASOURCE_PASSWORD}
 gutendex:
   api:
     url: https://gutendex.com/books/
